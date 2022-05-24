@@ -1,0 +1,27 @@
+<?php declare(strict_types=1);
+
+namespace Tests\unit\Domain;
+
+use PHPUnit\Framework\TestCase;
+use xVer\Bundle\DomainBundle\Domain\TranslationVO;
+
+/**
+ * @covers xVer\Bundle\DomainBundle\Domain\TranslationVO
+ */
+class TranslationVOTest extends TestCase
+{
+    public function testTranslationVO(): void
+    {
+        $translationVO = new TranslationVO('stockExists', [], TranslationVO::DOMAIN_VALIDATORS);
+        $this->assertSame('stockExists', $translationVO->getId());
+        $this->assertIsArray($translationVO->getParameters());
+        $this->assertCount(0, $translationVO->getParameters());
+        $this->assertSame(TranslationVO::DOMAIN_VALIDATORS, $translationVO->getDomain());
+    }
+
+    public function testInvalidDomainThrowsException(): void
+    {
+        $this->expectException(\InvalidArgumentException::class);
+        $translationVO = new TranslationVO('stockExists', [], '');
+    }
+}

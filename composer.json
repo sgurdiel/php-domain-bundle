@@ -1,0 +1,20 @@
+{
+    "name": "xver/domain-bundle",
+    "type": "library",
+    "description": "Provides a basic domain skeleton",
+    "keywords": [],
+    "license": "AGPLv3",
+    "require": {
+        "php": "^8.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5",
+        "vimeo/psalm": "^4.22"
+    },
+    "autoload": {
+        "psr-4": { "xVer\\Bundle\\DomainBundle\\": "src/" }
+    },
+    "autoload-dev": {
+        "psr-4": { "Tests\\": "tests/" }
+    }
+}
