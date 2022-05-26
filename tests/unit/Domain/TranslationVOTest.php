@@ -12,8 +12,8 @@ class TranslationVOTest extends TestCase
 {
     public function testTranslationVO(): void
     {
-        $translationVO = new TranslationVO('stockExists', [], TranslationVO::DOMAIN_VALIDATORS);
-        $this->assertSame('stockExists', $translationVO->getId());
+        $translationVO = new TranslationVO('testTranslation', [], TranslationVO::DOMAIN_VALIDATORS);
+        $this->assertSame('testTranslation', $translationVO->getId());
         $this->assertIsArray($translationVO->getParameters());
         $this->assertCount(0, $translationVO->getParameters());
         $this->assertSame(TranslationVO::DOMAIN_VALIDATORS, $translationVO->getDomain());
@@ -22,6 +22,6 @@ class TranslationVOTest extends TestCase
     public function testInvalidDomainThrowsException(): void
     {
         $this->expectException(\InvalidArgumentException::class);
-        $translationVO = new TranslationVO('stockExists', [], '');
+        $translationVO = new TranslationVO('testTranslation', [], '');
     }
 }

@@ -15,15 +15,15 @@ class DomainExceptionTest extends TestCase
     public function testThrowException(): void
     {
         $this->expectException(DomainException::class);
-        $this->expectExceptionMessage(serialize(new TranslationVO('stockExists', [], TranslationVO::DOMAIN_VALIDATORS)));
+        $this->expectExceptionMessage('testException');
 
-        throw new DomainException(new TranslationVO('stockExists', [], TranslationVO::DOMAIN_VALIDATORS));
+        throw new DomainException(new TranslationVO('testException', [], TranslationVO::DOMAIN_VALIDATORS));
     }
 
     public function testThrowableIsCatched(): void
     {
         try {
-            throw new DomainException(new TranslationVO('stockExists', [], TranslationVO::DOMAIN_VALIDATORS));
+            throw new DomainException(new TranslationVO('testException', [], TranslationVO::DOMAIN_VALIDATORS));
         } catch (\Throwable $th) {
             $this->assertTrue(true);
         }
@@ -32,7 +32,7 @@ class DomainExceptionTest extends TestCase
     public function testDomainException(): void
     {
         try {
-            $translationVO = new TranslationVO('stockExists', [], TranslationVO::DOMAIN_VALIDATORS);
+            $translationVO = new TranslationVO('testException', [], TranslationVO::DOMAIN_VALIDATORS);
             $domainException = new DomainException($translationVO, '');
             throw $domainException;
         } catch (\Throwable $th) {

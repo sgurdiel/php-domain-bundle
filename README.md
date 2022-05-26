@@ -1,2 +1,1 @@
-# php-domain-bundle
-
+[![PHPUnit test & Static code analysis](https://github.com/sgurdiel/php-domain-bundle/actions/workflows/php.yml/badge.svg?branch=main&event=push)](https://github.com/sgurdiel/php-domain-bundle/actions/workflows/php.yml)

@@ -3,7 +3,7 @@
     "type": "library",
     "description": "Provides a basic domain skeleton",
     "keywords": [],
-    "license": "AGPLv3",
+    "license": "AGPL-3.0-or-later",
     "require": {
         "php": "^8.0"
     },
