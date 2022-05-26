@@ -13,7 +13,7 @@ permissions:
 
 jobs:
   build:
-    name: MiCartera (PHP ${{ matrix.php-versions }})
+    name: php-domain-bundle (PHP ${{ matrix.php-versions }})
 
     runs-on: ubuntu-20.04
     
