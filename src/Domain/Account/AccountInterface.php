@@ -8,6 +8,9 @@ interface AccountInterface extends EntityInterface
 {
     public function getEmail(): string;
 
+    /** 
+     * @return array<string>
+     */
     public function getRoles(): array;
 
     public function getPassword(): string;
