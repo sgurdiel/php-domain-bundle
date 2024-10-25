@@ -13,18 +13,18 @@ class EntityObjectsCollection extends ArrayCollection
 {
     /**
      * {@inheritdoc}
-     * @param array<int,TEntity> $items
+     * @param array<int,TEntity> $elements
      */
-    final public function __construct(private readonly array $items = [])
+    final public function __construct(private readonly array $elements = [])
     {
-        foreach ($this->items as $item) {
+        foreach ($this->elements as $item) {
             if (false === is_a($item, $this->type())) {
                 throw new InvalidArgumentException(
                     sprintf('Found item which is not typed <%s>', $this->type())
                 );
             }
         }
-        parent::__construct($this->items);
+        parent::__construct($this->elements);
     }
 
     /**
